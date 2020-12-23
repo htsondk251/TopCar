@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${car.model}"></title>
+</head>
+
+<body>
+    <form action="#" th:action="@{/car/delete}" th:object="${car}" method="post" novalidate="novalidate">
+        <input type="hidden" th:field="*{id}" />
+        <h1 th:text="${car.model}"></h1>
+        <p th:text="${car.manufacturer}"></p>
+        <p th:text="${car.price}"></p>
+        <p th:text="${car.sales}"></p>
+        <p>
+            <img th:attr="src=@{'/images/' + ${car.photo}}, alt=${car.photo}" />
+        </p>
+        <a th:href="@{'/car/edit/' + ${car.id}}">Edit car</a>
+        <button type="submit">Delete</button>
+    </form>
+
+</body>
+
+</html>

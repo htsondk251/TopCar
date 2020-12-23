@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Car</title>
+</head>
+<body>
+    <form action="#" th:action="@{/car/save}" th:object="${car}" method="post" novalidate="novalidate">
+        <input type="hidden" placeholder="id" th:field="*{id}" /><br>
+        <input type="text" placeholder="model" th:field="*{model}" /><br>
+        <input type="text" placeholder="manufacturer" th:field="*{manufacturer}" /><br> 
+        <input type="text" th:placeholder="price" th:field="*{price}" /><br>
+        <input type="text" th:placeholder="sales" th:field="*{sales}" /><br>
+        <input type="text" placeholder="photo-enter model to search" th:field="*{photo}" /><br>
+        <button type="submit">Save</button>
+    </form>
+    
+</body>
+</html>
